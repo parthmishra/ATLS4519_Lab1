@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Coats</key>
+	<array>
+		<string>Peacoat</string>
+		<string>Chore Coat</string>
+		<string>Field Jacket</string>
+		<string>Parka</string>
+		<string>Car Coat</string>
+	</array>
+	<key>Shoes</key>
+	<array>
+		<string>CDBs</string>
+		<string>Chelsea Boots</string>
+		<string>Chukkas</string>
+		<string>Moc Toe</string>
+		<string>Sneakers</string>
+	</array>
+	<key>Shirts</key>
+	<array>
+		<string>Tshirts</string>
+		<string>Henleys</string>
+		<string>OCBD</string>
+		<string>Flannel</string>
+	</array>
+</dict>
+</plist>
