@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D09F4EB1C724EF4008D06ED /* clothes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D09F4EA1C724EF4008D06ED /* clothes.plist */; };
 		1D4A14641C649FF50058A0A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A14631C649FF50058A0A4 /* AppDelegate.swift */; };
 		1D4A14661C649FF50058A0A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A14651C649FF50058A0A4 /* ViewController.swift */; };
 		1D4A14691C649FF50058A0A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D4A14671C649FF50058A0A4 /* Main.storyboard */; };
 		1D4A146B1C649FF50058A0A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D4A146A1C649FF50058A0A4 /* Assets.xcassets */; };
 		1D4A146E1C649FF50058A0A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D4A146C1C649FF50058A0A4 /* LaunchScreen.storyboard */; };
-		1D4A147A1C64A7680058A0A4 /* clothes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D4A14791C64A7680058A0A4 /* clothes.plist */; };
 		1D4A147C1C64A8210058A0A4 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A147B1C64A8210058A0A4 /* SearchResultsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D09F4EA1C724EF4008D06ED /* clothes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = clothes.plist; sourceTree = "<group>"; };
 		1D4A14601C649FF50058A0A4 /* Lab2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D4A14631C649FF50058A0A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D4A14651C649FF50058A0A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,7 +25,6 @@
 		1D4A146A1C649FF50058A0A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D4A146D1C649FF50058A0A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D4A146F1C649FF50058A0A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D4A14791C64A7680058A0A4 /* clothes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = clothes.plist; path = ../../../../Desktop/clothes.plist; sourceTree = "<group>"; };
 		1D4A147B1C64A8210058A0A4 /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,8 +64,8 @@
 				1D4A14671C649FF50058A0A4 /* Main.storyboard */,
 				1D4A146A1C649FF50058A0A4 /* Assets.xcassets */,
 				1D4A146C1C649FF50058A0A4 /* LaunchScreen.storyboard */,
-				1D4A14791C64A7680058A0A4 /* clothes.plist */,
 				1D4A146F1C649FF50058A0A4 /* Info.plist */,
+				1D09F4EA1C724EF4008D06ED /* clothes.plist */,
 			);
 			path = Lab2;
 			sourceTree = "<group>";
@@ -130,9 +130,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D4A146E1C649FF50058A0A4 /* LaunchScreen.storyboard in Resources */,
+				1D09F4EB1C724EF4008D06ED /* clothes.plist in Resources */,
 				1D4A146B1C649FF50058A0A4 /* Assets.xcassets in Resources */,
 				1D4A14691C649FF50058A0A4 /* Main.storyboard in Resources */,
-				1D4A147A1C64A7680058A0A4 /* clothes.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +293,7 @@
 				1D4A14741C649FF50058A0A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
