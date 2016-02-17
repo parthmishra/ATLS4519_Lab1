@@ -23,7 +23,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="ZDn-np-UPs" kind="show" identifier="clothessegue" id="2ww-bm-sOn"/>
+                                    <segue destination="ZDn-np-UPs" kind="show" identifier="clothingsegue" id="2ww-bm-sOn"/>
                                     <segue destination="xOk-cI-qtC" kind="show" identifier="categorysegue" trigger="accessoryAction" id="OHn-Dn-kAu"/>
                                 </connections>
                             </tableViewCell>
@@ -74,16 +74,16 @@
             </objects>
             <point key="canvasLocation" x="1620" y="376"/>
         </scene>
-        <!--Clothes Type Info View Controller-->
+        <!--Clothing Type Info Table View Controller-->
         <scene sceneID="4AR-aV-aHo">
             <objects>
-                <tableViewController id="xOk-cI-qtC" customClass="ClothesTypeInfoViewController" customModule="Lab3" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xOk-cI-qtC" customClass="ClothingTypeInfoTableViewController" customModule="Lab3" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="FZl-fQ-MMv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
-                            <tableViewSection headerTitle="Clothing Type Info" id="LXZ-GT-j13">
+                            <tableViewSection headerTitle="Clothing Category Information" id="LXZ-GT-j13">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="N0k-ra-Qw2" detailTextLabel="dJa-vM-8xa" style="IBUITableViewCellStyleValue1" id="ecW-v7-UbA">
                                         <rect key="frame" x="0.0" y="114" width="600" height="44"/>
@@ -96,7 +96,7 @@
                                                     <rect key="frame" x="15" y="12" width="67" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dJa-vM-8xa">
@@ -120,7 +120,7 @@
                                                     <rect key="frame" x="15" y="12" width="84" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sH4-rr-I6q">
@@ -142,18 +142,18 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="clothesDescription" destination="EUW-cF-zGT" id="0VQ-aT-FTM"/>
-                        <outlet property="clothesName" destination="N0k-ra-Qw2" id="wJd-6c-x7n"/>
+                        <outlet property="categoryDescript" destination="sH4-rr-I6q" id="kZD-MF-Phd"/>
+                        <outlet property="categoryName" destination="dJa-vM-8xa" id="N4k-BW-DEF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DiD-hT-THJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1343" y="1147"/>
+            <point key="canvasLocation" x="1289" y="1068"/>
         </scene>
         <!--Add New Clothing-->
         <scene sceneID="CpR-Cj-aQz">
             <objects>
-                <viewController id="mbJ-XZ-hfg" customClass="AddClothesViewController" customModule="Lab3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mbJ-XZ-hfg" customClass="AddClothingViewController" customModule="Lab3" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="p2l-nV-fD6"/>
                         <viewControllerLayoutGuide type="bottom" id="h4d-lu-Msr"/>
@@ -162,13 +162,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clothing Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yol-6M-ob1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yol-6M-ob1">
                                 <rect key="frame" x="20" y="109" width="120" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="AGO-TI-jUA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g9i-cp-jfH">
@@ -202,7 +202,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="clothesTextField" destination="g9i-cp-jfH" id="jJk-B5-9x6"/>
+                        <outlet property="clothingTextfield" destination="g9i-cp-jfH" id="3T3-Qk-utC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8WZ-if-KIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

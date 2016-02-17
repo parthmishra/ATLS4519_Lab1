@@ -1,26 +1,25 @@
 //
-//  ClothesTypeInfoViewController.swift
+//  ContinentInfoTableViewController.swift
 //  Lab3
 //
-//  Created by Parth Mishra on 2/16/16.
+//  Created by Parth Mishra on 2/1/16.
 //  Copyright © 2016 Parth Mishra. All rights reserved.
 //
 
 import UIKit
 
-class ClothesTypeInfoViewController: UITableViewController {
-    
-    @IBOutlet weak var clothesName: UILabel!
-    @IBOutlet weak var clothesDescription: UILabel!
-    
+class ClothingTypeInfoTableViewController: UITableViewController {
+
+    @IBOutlet weak var categoryName: UILabel!
+    @IBOutlet weak var categoryDescript: UILabel!
     var name = String()
     var descript = String()
     
     override func viewWillAppear(animated: Bool) {
-        clothesName.text = name
-        clothesDescription.text = descript
+        categoryName.text = name
+        categoryDescript.text = descript
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,8 +34,5 @@ class ClothesTypeInfoViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
 
 }

@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
+//  Lab3
 //
-//
-//  Created by Parth Mishra on 2/14/16.
+//  Created by Parth Mishra on 1/25/16.
 //  Copyright © 2016 Parth Mishra. All rights reserved.
 //
 
@@ -11,21 +11,21 @@ import UIKit
 class ViewController: UITableViewController {
     var clothesTypeList = Clothes()
     let kfilename = "data.plist"
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         /*
-        //use a NSBundle object of the directory for our application to retrieve the pathname of clothesType.plist
-        let path = NSBundle.mainBundle().pathForResource("clothesType", ofType: "plist")
+        //use a NSBundle object of the directory for our application to retrieve the pathname of continents.plist
+        let path = NSBundle.mainBundle().pathForResource("continents", ofType: "plist")
         //load the data of the plist file into the dictionary
         clothesTypeList.clothesTypeData = NSDictionary(contentsOfFile: path!) as! [String : [String]]
-        //puts all the clothesType in an array
-        clothesTypeList.clothesType = Array(clothesTypeList.clothesTypeData.keys)
+        //puts all the continents in an array
+        clothesTypeList.continents = Array(clothesTypeList.clothesTypeData.keys)
         */
-        
+
         let path:String?
         let filePath = docFilePath(kfilename) //path to data file
-        
+
         //if the data file exists, use it
         if NSFileManager.defaultManager().fileExistsAtPath(filePath!){
             path = filePath
@@ -37,9 +37,9 @@ class ViewController: UITableViewController {
             print(path)
         }
         
-        
+        //load the data of the plist file into the dictionary
         clothesTypeList.clothesTypeData = NSDictionary(contentsOfFile: path!) as! [String : [String]]
-    
+        //puts all the continents in an array
         clothesTypeList.clothesTypes = Array(clothesTypeList.clothesTypeData.keys)
         
         //application instance
@@ -47,7 +47,7 @@ class ViewController: UITableViewController {
         //subscribe to the UIApplicationWillResignActiveNotification notification
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillResignActive:", name: "UIApplicationWillResignActiveNotification", object: app)
     }
-    
+
     //Required methods for UITableViewDataSource
     //Number of rows in the section
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,21 +64,20 @@ class ViewController: UITableViewController {
     
     //Handles segues to other view controllers
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "clothessegue" {
+        if segue.identifier == "clothingsegue" {
             let detailVC = segue.destinationViewController as! DetailViewController
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
             //sets the data for the destination controller
             detailVC.title = clothesTypeList.clothesTypes[indexPath.row]
             detailVC.clothesTypeListDetail=clothesTypeList
             detailVC.selectedClothesType = indexPath.row
-        } //for detail disclosure
+        } //for detail disclosure 
         else if segue.identifier == "categorysegue"{
-            let infoVC = segue.destinationViewController as! ClothesTypeInfoViewController
+            let infoVC = segue.destinationViewController as! ClothingTypeInfoTableViewController
             let editingCell = sender as! UITableViewCell
             let indexPath = tableView.indexPathForCell(editingCell)
             infoVC.name = clothesTypeList.clothesTypes[indexPath!.row]
-            let countries = clothesTypeList.clothesTypeData[infoVC.name]! as [String]
-            infoVC.descript = String(countries.count)
+            infoVC.descript = "Insert Detailed Informational Blurb Here" // can't figure out how to include a detailed text description here
         }
     }
     
@@ -106,6 +105,7 @@ class ViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
+
+
 }
+
