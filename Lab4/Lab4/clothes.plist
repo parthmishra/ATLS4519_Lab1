@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>clothing</key>
+	<array>
+		<dict>
+			<key>type</key>
+			<string>Pea Coats</string>
+			<key>url</key>
+			<string>https://en.wikipedia.org/wiki/Pea_coat</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>Watches</string>
+			<key>url</key>
+			<string>https://en.wikipedia.org/wiki/Watch</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>CDBs</string>
+			<key>url</key>
+			<string>https://en.wikipedia.org/wiki/C._%26_J._Clark#Desert_Boot</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>OCBD</string>
+			<key>url</key>
+			<string>https://en.wikipedia.org/wiki/Dress_shirt#Materials</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>Jeans</string>
+			<key>url</key>
+			<string>https://en.wikipedia.org/wiki/Jeans</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>Chinos</string>
+			<key>url</key>
+			<string>https://en.wikipedia.org/wiki/Chino_cloth</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>Belts</string>
+			<key>url</key>
+			<string>https://en.wikipedia.org/wiki/Belt_(clothing)</string>
+		</dict>
+	</array>
+</dict>
+</plist>
