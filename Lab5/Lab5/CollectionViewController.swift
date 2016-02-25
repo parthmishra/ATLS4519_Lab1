@@ -20,8 +20,6 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         super.viewDidLoad()
         for i in 0...10 {
             clothesImages.append("clothes" + String(i+1))
-        
-        
         }
     }
 
@@ -147,6 +145,10 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
             self.performSegueWithIdentifier("showDetail", sender: collectionView.cellForItemAtIndexPath(indexPath))
         }
         return false
+    }
+    
+    override func collectionView(collectionView: UICollectionView, moveItemAtIndexPath indexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        
     }
     
     /*

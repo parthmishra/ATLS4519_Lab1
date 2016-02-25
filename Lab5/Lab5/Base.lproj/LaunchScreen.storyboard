@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,7 +17,29 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fashion Catalogue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WB-bR-Rkw">
+                                <rect key="frame" x="97" y="223" width="406" height="154"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spring 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEo-Ae-Awa">
+                                <rect key="frame" x="254" y="356" width="93" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eEo-Ae-Awa" firstAttribute="centerX" secondItem="3WB-bR-Rkw" secondAttribute="centerX" id="4oB-tr-9kF"/>
+                            <constraint firstItem="3WB-bR-Rkw" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="GM8-IV-ZPo"/>
+                            <constraint firstItem="3WB-bR-Rkw" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="203" id="GQd-5x-HFF"/>
+                            <constraint firstItem="3WB-bR-Rkw" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="77" id="MLJ-9h-n9R"/>
+                            <constraint firstItem="eEo-Ae-Awa" firstAttribute="bottom" secondItem="3WB-bR-Rkw" secondAttribute="bottom" id="nTM-Be-Cxe"/>
+                            <constraint firstItem="3WB-bR-Rkw" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="wby-oq-PiC"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
