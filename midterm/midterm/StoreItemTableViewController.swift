@@ -64,6 +64,21 @@ class StoreItemTableViewController: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return true
     }
+    
+    
+    @IBAction func unwindSegue(segue:UIStoryboardSegue){
+        if segue.identifier=="doneSegue"{
+            let source = segue.sourceViewController as! AddItemViewController
+            //only add a country if there is text in the textfield
+            if ((source.addedItem.isEmpty) == false){
+                stores.append(source.addedItem)
+                tableView.reloadData()
+                let chosenStore = storeListDetail.stores[selectedStore]
+                storeListDetail.storeData[chosenStore]?.append(source.addedItem)
+            }
+        }
+    }
+
 
     /*
     // Override to support editing the table view.

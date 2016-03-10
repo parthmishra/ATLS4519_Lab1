@@ -114,16 +114,25 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Store Item" id="H4P-uZ-fzE">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="tbf-Kf-wQC"/>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="d6y-Ch-8UI"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="tbf-Kf-wQC">
+                            <connections>
+                                <segue destination="Yho-xW-Kyq" kind="unwind" unwindAction="unwindSegue:" id="hYR-jK-fFp"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="d6y-Ch-8UI">
+                            <connections>
+                                <segue destination="Yho-xW-Kyq" kind="unwind" unwindAction="unwindSegue:" id="xAy-CK-pS9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="itemTextField" destination="Fl5-nB-o7i" id="3qk-4B-vIk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vgd-09-YAk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Yho-xW-Kyq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5018" y="1698"/>
+            <point key="canvasLocation" x="4972" y="1740"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hME-So-zwe">

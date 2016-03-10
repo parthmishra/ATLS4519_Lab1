@@ -31,9 +31,8 @@ class StoreTableViewController: UITableViewController {
             print(path)
         }
         
-        //load the data of the plist file into the dictionary
+
         storeList.storeData = NSDictionary(contentsOfFile: path!) as! [String : [String]]
-        //puts all the continents in an array
         storeList.stores = Array(storeList.storeData.keys)
         
         //application instance
@@ -45,10 +44,8 @@ class StoreTableViewController: UITableViewController {
     
     
     func docFilePath(filename: String) -> String?{
-        //locate the documents directory
         let path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true)
-        let dir = path[0] as NSString //document directory
-        //creates the full path to our data file
+        let dir = path[0] as NSString
         return dir.stringByAppendingPathComponent(filename)
     }
     
