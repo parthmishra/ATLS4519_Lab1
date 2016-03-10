@@ -86,14 +86,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fl5-nB-o7i">
-                                <rect key="frame" x="349" y="137" width="186" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="186" id="Qio-bO-XAk"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOs-1J-ie0">
                                 <rect key="frame" x="20" y="146" width="88" height="21"/>
                                 <constraints>
@@ -103,6 +95,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fl5-nB-o7i">
+                                <rect key="frame" x="349" y="137" width="186" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="186" id="Qio-bO-XAk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -116,17 +116,17 @@
                     <navigationItem key="navigationItem" title="Add Store Item" id="H4P-uZ-fzE">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="tbf-Kf-wQC">
                             <connections>
-                                <segue destination="Yho-xW-Kyq" kind="unwind" unwindAction="unwindSegue:" id="hYR-jK-fFp"/>
+                                <segue destination="Yho-xW-Kyq" kind="unwind" identifier="cancelSegue" unwindAction="unwindSegue:" id="PU8-gK-7zP"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="d6y-Ch-8UI">
                             <connections>
-                                <segue destination="Yho-xW-Kyq" kind="unwind" unwindAction="unwindSegue:" id="xAy-CK-pS9"/>
+                                <segue destination="Yho-xW-Kyq" kind="unwind" identifier="doneSegue" unwindAction="unwindSegue:" id="Fx1-M5-bov"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="itemTextField" destination="Fl5-nB-o7i" id="3qk-4B-vIk"/>
+                        <outlet property="itemTextField" destination="Fl5-nB-o7i" id="99Z-xv-WBh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vgd-09-YAk" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -20,7 +20,7 @@ class StoreTableViewController: UITableViewController {
         let filePath = docFilePath(kfilename)
         
 
-        if NSFileManager.defaultManager().fileExistsAtPath(filePath!){
+        if NSFileManager.defaultManager().fileExistsAtPath(filePath!) {
             path = filePath
             print(path)
         }
@@ -35,9 +35,7 @@ class StoreTableViewController: UITableViewController {
         storeList.storeData = NSDictionary(contentsOfFile: path!) as! [String : [String]]
         storeList.stores = Array(storeList.storeData.keys)
         
-        //application instance
         let app = UIApplication.sharedApplication()
-        //subscribe to the UIApplicationWillResignActiveNotification notification
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillResignActive:", name: "UIApplicationWillResignActiveNotification", object: app)
     }
     
@@ -73,28 +71,26 @@ class StoreTableViewController: UITableViewController {
             detailVC.title = storeList.stores[indexPath.row]
             detailVC.storeListDetail=storeList
             detailVC.selectedStore = indexPath.row
-    }
-    func didReceiveMemoryWarning() {
-            super.didReceiveMemoryWarning()
-            // Dispose of any resources that can be recreated.
+        }
     }
     
     
     func applicationWillResignActive(notification: NSNotification){
         let filePath = docFilePath(kfilename)
         let data = NSMutableDictionary()
-        // adds our whole dictionary to the data dictionary
         data.addEntriesFromDictionary(storeList.storeData)
         print(data)
-        // write the contents of the array to our plist file
         data.writeToFile(filePath!, atomically: true)
     }
     
 
-    
-    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+  
 }
 
 
 
-}

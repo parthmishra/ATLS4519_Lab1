@@ -10,14 +10,14 @@ import UIKit
 
 class StoreItemTableViewController: UITableViewController {
     
-    var stores = [String]()
+    var items = [String]()
     var selectedStore = 0
     var storeListDetail = Stores()
     
     override func viewWillAppear(animated: Bool) {
         storeListDetail.stores = Array(storeListDetail.storeData.keys)
         let chosenStore = storeListDetail.stores[selectedStore]
-        stores = storeListDetail.storeData[chosenStore]! as [String]
+        items = storeListDetail.storeData[chosenStore]! as [String]
     }
 
 
@@ -45,7 +45,7 @@ class StoreItemTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return stores.count
+        return items.count
     }
 
     
@@ -53,7 +53,7 @@ class StoreItemTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = stores[indexPath.row]
+        cell.textLabel?.text = items[indexPath.row]
         return cell
     }
     
@@ -64,14 +64,56 @@ class StoreItemTableViewController: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return true
     }
+
+
     
+    // Override to support editing the table view.
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // Delete the row from the data source
+            items.removeAtIndex(indexPath.row)
+            let chosenStore = storeListDetail.stores[selectedStore]
+            storeListDetail.storeData[chosenStore]?.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }    
+    }
     
-    @IBAction func unwindSegue(segue:UIStoryboardSegue){
+
+    
+    // Override to support rearranging the table view.
+    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+        let fromRow = fromIndexPath.row //row being moved from
+        let toRow = toIndexPath.row //row being moved to
+        let moveItem = items[fromRow] //country being moved
+        items.removeAtIndex(fromRow)
+        items.insert(moveItem, atIndex: toRow)
+        let chosenStore = storeListDetail.stores[selectedStore]
+        storeListDetail.storeData[chosenStore]?.removeAtIndex(fromRow)
+        storeListDetail.storeData[chosenStore]?.insert(moveItem, atIndex: toRow)
+
+    }
+    
+
+    
+    // Override to support conditional rearranging of the table view.
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the item to be re-orderable.
+        return true
+    }
+
+    
+    @IBAction func unwindSegue(segue:UIStoryboardSegue) {
         if segue.identifier=="doneSegue"{
             let source = segue.sourceViewController as! AddItemViewController
-            //only add a country if there is text in the textfield
-            if ((source.addedItem.isEmpty) == false){
-                stores.append(source.addedItem)
+            print("done segue reached")
+            if ((source.addedItem.isEmpty) == true) {
+                print("nothing to add?")
+            }
+            if ((source.addedItem.isEmpty) == false) {
+                print("adding item")
+                items.append(source.addedItem)
                 tableView.reloadData()
                 let chosenStore = storeListDetail.stores[selectedStore]
                 storeListDetail.storeData[chosenStore]?.append(source.addedItem)
@@ -79,33 +121,6 @@ class StoreItemTableViewController: UITableViewController {
         }
     }
 
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     /*
     // MARK: - Navigation

@@ -15,7 +15,7 @@ class AddItemViewController: UIViewController {
     var addedItem = String()
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "donesegue" {
+        if segue.identifier == "doneSegue" {
             if ((itemTextField.text?.isEmpty) == false) {
                 addedItem = itemTextField.text!
             }
