@@ -84,9 +84,9 @@ class StoreItemTableViewController: UITableViewController {
     
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-        let fromRow = fromIndexPath.row //row being moved from
-        let toRow = toIndexPath.row //row being moved to
-        let moveItem = items[fromRow] //country being moved
+        let fromRow = fromIndexPath.row 
+        let toRow = toIndexPath.row
+        let moveItem = items[fromRow]
         items.removeAtIndex(fromRow)
         items.insert(moveItem, atIndex: toRow)
         let chosenStore = storeListDetail.stores[selectedStore]
