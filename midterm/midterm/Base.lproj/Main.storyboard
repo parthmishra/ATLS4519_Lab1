@@ -95,7 +95,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOs-1J-ie0">
-                                <rect key="frame" x="71" y="146" width="88" height="21"/>
+                                <rect key="frame" x="20" y="146" width="88" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="Xwr-7B-7qo"/>
                                 </constraints>
@@ -110,7 +110,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Fl5-nB-o7i" secondAttribute="trailing" constant="45" id="adv-MU-ygW"/>
                             <constraint firstItem="Fl5-nB-o7i" firstAttribute="top" secondItem="6tU-nw-hzu" secondAttribute="bottom" constant="73" id="uEj-rx-7hg"/>
                             <constraint firstItem="Fl5-nB-o7i" firstAttribute="centerY" secondItem="JOs-1J-ie0" secondAttribute="centerY" constant="-4.5" id="xIc-po-zAV"/>
-                            <constraint firstItem="JOs-1J-ie0" firstAttribute="leading" secondItem="B9I-Wc-wRd" secondAttribute="leadingMargin" constant="51" id="yXL-hm-Rsy"/>
+                            <constraint firstItem="JOs-1J-ie0" firstAttribute="leading" secondItem="B9I-Wc-wRd" secondAttribute="leadingMargin" id="yXL-hm-Rsy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Store Item" id="H4P-uZ-fzE">

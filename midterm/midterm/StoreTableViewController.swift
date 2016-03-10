@@ -69,7 +69,7 @@ class StoreTableViewController: UITableViewController {
     
     //Handles segues to other view controllers
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "additemsegue" {
+        if segue.identifier == "storeitemsegue" {
             let detailVC = segue.destinationViewController as! StoreItemTableViewController
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
             //sets the data for the destination controller
