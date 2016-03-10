@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "065D093428F90BC5657C9BC0A1C1D2D6C19FEFD2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "065D093428F90BC5657C9BC0A1C1D2D6C19FEFD2" : 0,
+    "3333D2B2B21139066143C694B134069EC4F32320" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "61F8FA89-EFC0-4635-8623-FD26217248A0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "065D093428F90BC5657C9BC0A1C1D2D6C19FEFD2" : "ATLS4519_Lab1\/",
+    "3333D2B2B21139066143C694B134069EC4F32320" : "Spring16_AdvancedMAD_class_examples\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "midterm",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "midterm\/midterm.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/parthmishra\/ATLS4519_Lab1.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "065D093428F90BC5657C9BC0A1C1D2D6C19FEFD2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/CUATLAS\/Spring16_AdvancedMAD_class_examples.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3333D2B2B21139066143C694B134069EC4F32320"
+    }
+  ]
+}
