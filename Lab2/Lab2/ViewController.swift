@@ -10,92 +10,75 @@ import UIKit
 
 class ViewController: UITableViewController {
     
-    var clothesTypeList = Clothes()
-    let kfilename = "data.plist"
+    var allclothes : [String : [String]]!
+    var clothes : [String]!
+    var searchController : UISearchController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        let path:String?
-        let filePath = docFilePath(kfilename)
+        let path = NSBundle.mainBundle().pathForResource("clothes", ofType: "plist")
+        allclothes = NSDictionary(contentsOfFile: path!) as! [String : [String]]
+        clothes = Array(allclothes.keys)
+        clothes.sortInPlace({$0 < $1})
         
-        //if the data file exists, use it
-        if NSFileManager.defaultManager().fileExistsAtPath(filePath!){
-            path = filePath
-            print(path)
-        }
-        else {
-            //use a NSBundle object of the directory for our application to retrieve the pathname of our initial plist
-            path = NSBundle.mainBundle().pathForResource("clothes", ofType: "plist")
-            print(path)
-        }
+        //search results
+        let resultsController = SearchResultsController()
+        resultsController.allclothes = allclothes
+        resultsController.clothes = clothes
+        searchController = UISearchController(searchResultsController: resultsController) //create a search controller and initialize with our SearchResultsController instance
         
-        
-        clothesTypeList.clothesData = NSDictionary(contentsOfFile: path!) as! [String : [String]]
-        clothesTypeList.clothes = Array(clothesTypeList.clothesData.keys)
-        
-        let app = UIApplication.sharedApplication()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillResignActive:", name: "UIApplicationWillResignActive", object: app)
-
-
-       
+        //search bar configuration
+        searchController.searchBar.placeholder = "Enter a search term" //place holder text
+        searchController.searchBar.sizeToFit() //sets appropriate size for the search bar
+        tableView.tableHeaderView=searchController.searchBar //install the search bar as the table header
+        searchController.searchResultsUpdater = resultsController //sets the instance to update search results
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return clothesTypeList.clothesData.count
+        let clothe = clothes[section]
+        let clothesection = allclothes[clothe]! as [String]
+        return clothesection.count
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath:  indexPath)
-        cell.textLabel?.text = clothesTypeList.clothes[indexPath.row]
+        let section = indexPath.section
+        let clothe = clothes[section]
+        let wordsSection = allclothes[clothe]! as [String]
+        
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath)
+        cell.textLabel?.text = wordsSection[indexPath.row]
         return cell
     }
     
-
-    //Handles segues to other view controllers
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "clothessegue" {
-            let detailVC = segue.destinationViewController as! DetailViewController
-            let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
-            //sets the data for the destination controller
-            detailVC.title = clothesTypeList.continents[indexPath.row]
-            detailVC.clothesTypeListDetail=clothesTypeList
-            detailVC.selectedContinent = indexPath.row
-        } //for detail disclosure
-        else if segue.identifier == "clothestypesegue"{
-            let infoVC = segue.destinationViewController as! ContinentInfoTableViewController
-            let editingCell = sender as! UITableViewCell
-            let indexPath = tableView.indexPathForCell(editingCell)
-            infoVC.name = clothesTypeList.continents[indexPath!.row]
-            let countries = clothesTypeList.continentData[infoVC.name]! as [String]
-            infoVC.number = String(countries.count)
-        }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let section = indexPath.section
+        let clothe = clothes[section]
+        let clothesSection = allclothes[clothe]! as [String]
+        
+        
+        let alert = UIAlertController(title: "Row selected", message: "Search \(clothesSection[indexPath.row])?", preferredStyle: UIAlertControllerStyle.Alert)
+        let searchAction = UIAlertAction(title: "Search", style: UIAlertActionStyle.Default, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil)
+        alert.addAction(searchAction)
+        alert.addAction(cancelAction)
+        presentViewController(alert, animated: true, completion: nil)
+        
     }
-
     
     //UITableViewDatasource methods
     
-    func docFilePath(filename: String) -> String?{
-        //locate the documents directory
-        let path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true)
-        let dir = path[0] as NSString //document directory
-        //creates the full path to our data file
-        return dir.stringByAppendingPathComponent(filename)
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return clothes.count
     }
     
-    func applicationWillResignActive(notification: NSNotification){
-        let filePath = docFilePath(kfilename)
-        let data = NSMutableDictionary()
-        //adds our whole dictionary to the data dictionary
-        data.addEntriesFromDictionary(clothesTypeList.clothesData)
-        print(data)
-        //write the contents of the array to our plist file
-        data.writeToFile(filePath!, atomically: true)
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return clothes[section]
     }
-
-
     
     
     override func didReceiveMemoryWarning() {
