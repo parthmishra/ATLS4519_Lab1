@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D269DA21C97D245001D6343 /* clothes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D269DA11C97D245001D6343 /* clothes.plist */; };
 		1D5DCE611C72FC3000AFBA7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5DCE601C72FC3000AFBA7A /* AppDelegate.swift */; };
 		1D5DCE681C72FC3000AFBA7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D5DCE671C72FC3000AFBA7A /* Assets.xcassets */; };
 		1D5DCE6B1C72FC3000AFBA7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D5DCE691C72FC3000AFBA7A /* LaunchScreen.storyboard */; };
-		1D5DCE751C72FC8800AFBA7A /* clothes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D5DCE741C72FC8800AFBA7A /* clothes.plist */; };
 		1D7EC1AE1C744D9400696267 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7EC1AD1C744D9400696267 /* ViewController.swift */; };
 		1D7EC1B01C744DA000696267 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7EC1AF1C744DA000696267 /* DetailViewController.swift */; };
 		1D7EC1B21C744DAF00696267 /* AddClothingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7EC1B11C744DAF00696267 /* AddClothingViewController.swift */; };
@@ -21,12 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D269DA11C97D245001D6343 /* clothes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = clothes.plist; sourceTree = "<group>"; };
 		1D5DCE5D1C72FC3000AFBA7A /* Lab3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D5DCE601C72FC3000AFBA7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D5DCE671C72FC3000AFBA7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D5DCE6A1C72FC3000AFBA7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D5DCE6C1C72FC3000AFBA7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D5DCE741C72FC8800AFBA7A /* clothes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = clothes.plist; sourceTree = "<group>"; };
 		1D7EC1AD1C744D9400696267 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1D7EC1AF1C744DA000696267 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1D7EC1B11C744DAF00696267 /* AddClothingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddClothingViewController.swift; sourceTree = "<group>"; };
@@ -75,8 +75,8 @@
 				1D7EC1B71C744DD200696267 /* Main.storyboard */,
 				1D5DCE671C72FC3000AFBA7A /* Assets.xcassets */,
 				1D5DCE691C72FC3000AFBA7A /* LaunchScreen.storyboard */,
+				1D269DA11C97D245001D6343 /* clothes.plist */,
 				1D7EC1B91C744DDA00696267 /* continents.plist */,
-				1D5DCE741C72FC8800AFBA7A /* clothes.plist */,
 				1D5DCE6C1C72FC3000AFBA7A /* Info.plist */,
 			);
 			path = Lab3;
@@ -140,9 +140,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D269DA21C97D245001D6343 /* clothes.plist in Resources */,
 				1D5DCE6B1C72FC3000AFBA7A /* LaunchScreen.storyboard in Resources */,
 				1D7EC1BA1C744DDA00696267 /* continents.plist in Resources */,
-				1D5DCE751C72FC8800AFBA7A /* clothes.plist in Resources */,
 				1D5DCE681C72FC3000AFBA7A /* Assets.xcassets in Resources */,
 				1D7EC1B81C744DD200696267 /* Main.storyboard in Resources */,
 			);
