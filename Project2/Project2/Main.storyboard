@@ -71,8 +71,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="16X-cQ-bJ7">
-                                <rect key="frame" x="183" y="97" width="234" height="192"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="16X-cQ-bJ7">
+                                <rect key="frame" x="183" y="72" width="234" height="192"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="234" id="2xk-yS-LQI"/>
                                 </constraints>
@@ -113,6 +113,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5jC-hB-ArB">
+                                <rect key="frame" x="253" y="272" width="95" height="30"/>
+                                <state key="normal" title="Upload Image"/>
+                                <connections>
+                                    <action selector="buttonClicked" destination="RO0-YO-XcT" eventType="touchUpInside" id="ZPs-iQ-KP6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -121,6 +128,7 @@
                             <constraint firstItem="16X-cQ-bJ7" firstAttribute="centerX" secondItem="g0J-Gm-Fbu" secondAttribute="centerX" id="4rV-lp-unl"/>
                             <constraint firstItem="5f0-1u-RBw" firstAttribute="trailing" secondItem="rdB-gn-7Oc" secondAttribute="trailing" id="79d-T8-WQL"/>
                             <constraint firstItem="16X-cQ-bJ7" firstAttribute="top" secondItem="2vZ-1a-ztN" secondAttribute="bottom" constant="33" id="9G5-Jh-fZh"/>
+                            <constraint firstItem="5jC-hB-ArB" firstAttribute="centerX" secondItem="5f0-1u-RBw" secondAttribute="centerX" id="9KH-F8-zcC"/>
                             <constraint firstItem="loV-kh-5nT" firstAttribute="leading" secondItem="caR-11-NAf" secondAttribute="leading" id="Bho-8a-KJO"/>
                             <constraint firstItem="16X-cQ-bJ7" firstAttribute="centerX" secondItem="5f0-1u-RBw" secondAttribute="centerX" id="DkU-u7-vbt"/>
                             <constraint firstItem="caR-11-NAf" firstAttribute="leading" secondItem="H3P-ZY-4sf" secondAttribute="leading" id="Gu4-tj-iUe"/>
@@ -130,6 +138,7 @@
                             <constraint firstItem="5f0-1u-RBw" firstAttribute="top" secondItem="16X-cQ-bJ7" secondAttribute="bottom" constant="45" id="Oay-6D-zEW"/>
                             <constraint firstItem="loV-kh-5nT" firstAttribute="leading" secondItem="g0J-Gm-Fbu" secondAttribute="leadingMargin" id="VEw-la-m7x"/>
                             <constraint firstItem="loV-kh-5nT" firstAttribute="centerY" secondItem="5f0-1u-RBw" secondAttribute="centerY" id="ZoK-yx-dab"/>
+                            <constraint firstItem="5jC-hB-ArB" firstAttribute="top" secondItem="16X-cQ-bJ7" secondAttribute="bottom" constant="8" symbolic="YES" id="dE2-1s-9pi"/>
                             <constraint firstItem="rdB-gn-7Oc" firstAttribute="trailing" secondItem="gjm-0w-Xj4" secondAttribute="trailing" id="evu-lU-NkL"/>
                             <constraint firstItem="rdB-gn-7Oc" firstAttribute="top" secondItem="5f0-1u-RBw" secondAttribute="bottom" constant="25" id="gwG-zB-a7Q"/>
                             <constraint firstItem="H3P-ZY-4sf" firstAttribute="centerY" secondItem="gjm-0w-Xj4" secondAttribute="centerY" constant="-1.5" id="gx1-JI-fuU"/>
@@ -149,8 +158,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="clothesColor" destination="gjm-0w-Xj4" id="kZj-IQ-B16"/>
+                        <outlet property="clothesImage" destination="16X-cQ-bJ7" id="wlb-tG-MOg"/>
                         <outlet property="clothesName" destination="5f0-1u-RBw" id="ZN0-Vo-vNV"/>
                         <outlet property="clothesType" destination="rdB-gn-7Oc" id="i6K-s6-EWw"/>
+                        <outlet property="uploadImage" destination="5jC-hB-ArB" id="1Rl-ul-yfd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNP-CH-iS9" userLabel="First Responder" sceneMemberID="firstResponder"/>
