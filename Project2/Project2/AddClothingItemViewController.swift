@@ -8,6 +8,22 @@
 
 import UIKit
 
+
+// save/load image from http://helpmecodeswift.com/image-manipulation/saving-loading-images
+
+func getDocumentsURL() -> NSURL {
+    let documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+    return documentsURL
+}
+
+func fileInDocumentsDirectory(filename: String) -> String {
+    
+    let fileURL = getDocumentsURL().URLByAppendingPathComponent(filename)
+    
+    return fileURL.path!
+    
+}
+
 class AddClothingItemViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
 
@@ -18,6 +34,8 @@ class AddClothingItemViewController: UIViewController, UINavigationControllerDel
     @IBOutlet weak var clothesColor: UITextField!
     
     var imagePicker = UIImagePickerController()
+    var images = [UIImage]()
+  
     
     @IBAction func buttonClicked() {
         
@@ -32,26 +50,25 @@ class AddClothingItemViewController: UIViewController, UINavigationControllerDel
 
     }
     
-    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+ 
+        
     }
-
-    override func didReceiveMemoryWarning() {
+    
+    
+     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
             
         })
-        
         clothesImage.image = image
         
     }
@@ -68,5 +85,33 @@ class AddClothingItemViewController: UIViewController, UINavigationControllerDel
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "savesegue" {
+            
+            if clothesName.text?.isEmpty == false {
+                let imageName = clothesName.text
+                let path = fileInDocumentsDirectory(imageName!)
+                saveImage(clothesImage.image!, path: path)
+            }
+            
+           
+        }
+ 
+    }
+    
 }
+
+    
+    func saveImage (image: UIImage, path: String ) -> Bool{
+        
+        let pngImageData = UIImagePNGRepresentation(image)
+        let result = pngImageData!.writeToFile(path, atomically: true)
+        
+        return result
+        
+    }
+    
+
+
+

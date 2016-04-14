@@ -14,32 +14,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="B5h-j5-CXb">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="125" height="110"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="closetcell" id="Tw0-2T-WWT">
-                                <rect key="frame" x="0.0" y="64" width="107" height="95"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="closetcell" id="Tw0-2T-WWT" customClass="ClosetViewCellController" customModule="Project2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="125" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="107" height="95"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="szA-bp-19P">
-                                            <rect key="frame" x="0.0" y="0.0" width="107" height="95"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hgb-vl-MDI">
+                                            <rect key="frame" x="5" y="5" width="115" height="115"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="szA-bp-19P" firstAttribute="leading" secondItem="Tw0-2T-WWT" secondAttribute="leading" id="5yN-h3-V4z"/>
-                                    <constraint firstAttribute="trailing" secondItem="szA-bp-19P" secondAttribute="trailing" id="F6T-Xd-cjY"/>
-                                    <constraint firstAttribute="bottom" secondItem="szA-bp-19P" secondAttribute="bottom" id="TLY-It-6X3"/>
-                                    <constraint firstItem="szA-bp-19P" firstAttribute="top" secondItem="Tw0-2T-WWT" secondAttribute="top" id="okb-IY-U0T"/>
+                                    <constraint firstItem="Hgb-vl-MDI" firstAttribute="top" secondItem="Tw0-2T-WWT" secondAttribute="topMargin" constant="-3" id="7GQ-fX-HQa"/>
+                                    <constraint firstItem="Hgb-vl-MDI" firstAttribute="centerY" secondItem="Tw0-2T-WWT" secondAttribute="centerY" id="UOv-dZ-0qg"/>
+                                    <constraint firstItem="Hgb-vl-MDI" firstAttribute="leading" secondItem="Tw0-2T-WWT" secondAttribute="leadingMargin" constant="-3" id="X90-Z0-KE2"/>
+                                    <constraint firstItem="Hgb-vl-MDI" firstAttribute="centerX" secondItem="Tw0-2T-WWT" secondAttribute="centerX" id="hPK-VB-TXj"/>
                                 </constraints>
-                                <size key="customSize" width="107" height="95"/>
+                                <size key="customSize" width="125" height="125"/>
+                                <connections>
+                                    <outlet property="imageView" destination="Hgb-vl-MDI" id="IhY-os-A2c"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

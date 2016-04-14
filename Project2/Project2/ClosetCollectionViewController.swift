@@ -8,21 +8,39 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
 
-class ClosetCollectionViewController: UICollectionViewController {
+class ClosetCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
+    var clothesImages = [String]()
+    let reuseIdentifier = "closetcell"
+    var imageName = String()
+
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
+        
         // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        //self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+        
     }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("reloading...")
+        super.collectionView!.reloadData()
+    }
+    
+
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -43,22 +61,49 @@ class ClosetCollectionViewController: UICollectionViewController {
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return clothesImages.count
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! ClosetViewCellController
     
         // Configure the cell
+        print("Configuring Cell...")
+        let path = fileInDocumentsDirectory(imageName)
+        
+        cell.imageView.image = loadImageFromPath(path)
+ 
     
         return cell
     }
+    
+    func loadImageFromPath(path: String) -> UIImage? {
+        
+        let image = UIImage(contentsOfFile: path)
+        
+         return image
+        
+    }
+    
+    
+    @IBAction func unwindSegue(segue:UIStoryboardSegue) {
+        if segue.identifier == "savesegue" {
+            let source = segue.sourceViewController as! AddClothingItemViewController
+            imageName = source.clothesName.text!
+            clothesImages.append(imageName)
+            let indexPath = NSIndexPath(forItem: clothesImages.count-1, inSection: 0)
+            collectionView?.insertItemsAtIndexPaths([indexPath])
+        }
+            
+    }
+    
+    
 
     // MARK: UICollectionViewDelegate
 

@@ -13,6 +13,7 @@
 		1D4B9D9C1CB6ADFB00A44048 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D4B9D9B1CB6ADFB00A44048 /* Main.storyboard */; };
 		1D78B39B1CB6B02100E3EA51 /* ClosetCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78B39A1CB6B02100E3EA51 /* ClosetCollectionViewController.swift */; };
 		1D78B39D1CB6B0CC00E3EA51 /* AddClothingItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78B39C1CB6B0CC00E3EA51 /* AddClothingItemViewController.swift */; };
+		1DED9E8A1CBF4B0700C190A8 /* ClosetViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DED9E891CBF4B0700C190A8 /* ClosetViewCellController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1D4B9D9B1CB6ADFB00A44048 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1D78B39A1CB6B02100E3EA51 /* ClosetCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosetCollectionViewController.swift; sourceTree = "<group>"; };
 		1D78B39C1CB6B0CC00E3EA51 /* AddClothingItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddClothingItemViewController.swift; sourceTree = "<group>"; };
+		1DED9E891CBF4B0700C190A8 /* ClosetViewCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosetViewCellController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				1D4B9D891CB6ADB600A44048 /* AppDelegate.swift */,
-				1D78B39A1CB6B02100E3EA51 /* ClosetCollectionViewController.swift */,
 				1D4B9D9B1CB6ADFB00A44048 /* Main.storyboard */,
+				1D78B39A1CB6B02100E3EA51 /* ClosetCollectionViewController.swift */,
+				1DED9E891CBF4B0700C190A8 /* ClosetViewCellController.swift */,
 				1D78B39C1CB6B0CC00E3EA51 /* AddClothingItemViewController.swift */,
 				1D4B9D901CB6ADB600A44048 /* Assets.xcassets */,
 				1D4B9D921CB6ADB600A44048 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			files = (
 				1D78B39D1CB6B0CC00E3EA51 /* AddClothingItemViewController.swift in Sources */,
 				1D78B39B1CB6B02100E3EA51 /* ClosetCollectionViewController.swift in Sources */,
+				1DED9E8A1CBF4B0700C190A8 /* ClosetViewCellController.swift in Sources */,
 				1D4B9D8A1CB6ADB600A44048 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
