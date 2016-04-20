@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Lab9</string>
+    <string name="clothes">Clothes</string>
+    <string name="create_order">Order</string>
+    <string-array name="clothes_types">
+        <item>Jeans</item>
+        <item>Shirts</item>
+        <item>Watches</item>
+    </string-array>
+    <string name="title_activity_order">OrderActivity</string>
+
+</resources>
