@@ -69,7 +69,7 @@ class RecipeTableViewController: UITableViewController {
             if source.addedrecipe.isEmpty == false {
                 let newRecipe = Recipe(newname: source.addedrecipe, newurl: source.addedurl)
                 recipes.append(newRecipe)
-                let newRecipeDict = ["name": source.addedrecipe, "url": source.addedurl]
+                let newRecipeDict = ["name": sqwource.addedrecipe, "url": source.addedurl]
                 let reciperef = ref.childByAppendingPath(source.addedrecipe)
                 reciperef.setValue(newRecipeDict)
             }

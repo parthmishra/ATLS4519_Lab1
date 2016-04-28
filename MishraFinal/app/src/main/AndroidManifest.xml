@@ -16,7 +16,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".SportsActivity" />
-        <activity android:name=".DetailActivity"></activity>
+        <activity android:name=".DetailActivity" />
+        <activity
+            android:name=".SignUpActivity"
+            android:label="@string/title_activity_sign_up"
+            android:parentActivityName=".WorkoutTypeActivity">
+        </activity>
     </application>
 
 </manifest>

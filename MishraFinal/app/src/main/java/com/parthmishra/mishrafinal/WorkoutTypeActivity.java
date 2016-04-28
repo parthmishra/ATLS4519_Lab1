@@ -30,4 +30,22 @@ public class WorkoutTypeActivity extends Activity {
         ListView listView = (ListView)findViewById(R.id.listView);
         listView.setOnItemClickListener(itemClickListener);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        switch(menuItem.getItemId()) {
+            case R.id.sign_up:
+                Intent intent = new Intent(this, SignUpActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(menuItem);
+        }
+    }
 }

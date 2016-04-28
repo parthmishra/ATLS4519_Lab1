@@ -5,4 +5,6 @@
         <item>Strength</item>
         <item>Flexibility</item>
     </string-array>
+    <string name="sign_up">Sign Up</string>
+    <string name="title_activity_sign_up">Sign Up</string>
 </resources>
