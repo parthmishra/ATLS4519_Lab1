@@ -16,6 +16,7 @@ public class WorkoutTypeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout_type);
 
+
         AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> listView, View view, int position, long id) {
                 String workouttype = (String) listView.getItemAtPosition(position);
@@ -24,6 +25,7 @@ public class WorkoutTypeActivity extends Activity {
                 startActivity(intent);
             }
         };
+
 
         ListView listView = (ListView)findViewById(R.id.listView);
         listView.setOnItemClickListener(itemClickListener);

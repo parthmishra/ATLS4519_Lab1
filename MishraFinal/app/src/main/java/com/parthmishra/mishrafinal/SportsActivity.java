@@ -1,12 +1,14 @@
 package com.parthmishra.mishrafinal;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.app.Activity;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.ArrayAdapter;
 
 
 public class SportsActivity extends Activity {
@@ -20,14 +22,16 @@ public class SportsActivity extends Activity {
 
         workouttype = (String)getIntent().getExtras().get("workouttype");
 
+
         AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
-            public void onItemClick(ListView sportsListView, View view, int position, long id) {
-                Intent intent = new Intent(SportsActivity.this, DetailActivity.class);
-                intent.putExtra("workoutid", (int) id);
-                intent.putExtra("workouttype", workouttype);
-                startActivity(intent);
-            }
+            public void onItemClick(AdapterView<?> listView, View view, int position, long id) {
+                        Intent intent = new Intent(SportsActivity.this, DetailActivity.class);
+                        intent.putExtra("workoutid", (int) id);
+                        intent.putExtra("workouttype", workouttype);
+                        startActivity(intent);
+                    }
         };
+
 
 
         ArrayAdapter<Workout> listAdapter;
