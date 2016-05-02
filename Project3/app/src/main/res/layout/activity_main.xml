@@ -7,10 +7,62 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#000000"
     tools:context="com.parthmishra.project3.MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="269dp"
+        android:layout_height="55dp"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:fontFamily="sans-serif-light"
+        android:paddingTop="20dp"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="269dp"
+        android:layout_height="40dp"
+        android:hint="@string/enter_summoner"
+        android:background="#303030"
+        android:textColorHint="#7b7b7b"
+        android:gravity="center_horizontal"
+        android:paddingTop="7dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="100dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:id="@+id/editText" />
+    
+    <Spinner
+        android:id="@+id/regions_spinner"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:background="#303030"
+        android:layout_alignTop="@+id/editText"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText"
+        android:layout_marginTop="81dp"
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignEnd="@+id/editText" />
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="269dp"
+        android:layout_height="100dp"
+        android:text="@string/submit_button_text"
+        android:background="@color/blue"
+        android:textSize="35dp"
+        android:fontFamily="sans-serif-light"
+        android:layout_marginTop="59dp"
+        android:layout_below="@+id/regions_spinner"
+        android:layout_alignLeft="@+id/regions_spinner"
+        android:layout_alignStart="@+id/regions_spinner" />
+
 </RelativeLayout>

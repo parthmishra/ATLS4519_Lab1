@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">Project3</string>
+    <string name="app_name">League Analytics</string>
+    <string name="enter_summoner">Enter Summoner Name</string>
+    <string name="submit_button_text">Submit</string>
+    <string-array name="regions">
+        <item>NA</item>
+        <item>EUW</item>
+        <item>EUNE</item>
+        <item>LAN</item>
+        <item>OCE</item>
+        <item>KR</item>
+        <item>RUS</item>
+        <item>JP</item>
+    </string-array>
 </resources>
