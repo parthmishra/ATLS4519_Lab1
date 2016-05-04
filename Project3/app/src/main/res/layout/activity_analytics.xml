@@ -7,22 +7,134 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/analytics_bg"
     tools:context="com.parthmishra.project3.Analytics">
 
+    <!-- Static Views -->
 
-    <ProgressBar
-        android:id="@+id/progressBar"
+    <TextView
+        android:id="@+id/analyticsTitleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="STATISTICS"
+        android:textColor="@color/white"
+        android:gravity="center_horizontal"
+        android:textSize="20pt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/playerCS"
+        android:textColor="@color/white"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/challengerCS"
+        android:layout_toLeftOf="@+id/challengerCS"
+        android:layout_toStartOf="@+id/challengerCS"
+        android:layout_marginRight="45dp"
+        android:layout_marginEnd="45dp" />
+
+    <TextView
+        android:id="@+id/challengerCS"
+        android:textColor="@color/white"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_below="@+id/you"
+        android:layout_alignRight="@+id/analyticsTitleView"
+        android:layout_alignEnd="@+id/analyticsTitleView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:text="Average CS:"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:indeterminate="true"
-        android:layout_centerHorizontal="true"
-        android:visibility="gone" />
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/responseView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </ScrollView>
+        android:layout_marginBottom="42dp"
+        android:layout_alignTop="@+id/playerCS"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/averageWardsPlaced"
+        android:text="Average Wards Placed:"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="42dp"
+        android:layout_above="@+id/averageGoldEarned"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/playerWardsPlaced"
+        android:textColor="@color/white"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/averageWardsPlaced"
+        android:layout_alignLeft="@+id/playerCS"
+        android:layout_alignStart="@+id/playerCS" />
+
+    <TextView
+        android:id="@+id/challengerWardsPlaced"
+        android:textColor="@color/white"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/playerWardsPlaced"
+        android:layout_alignLeft="@+id/challengerCS"
+        android:layout_alignStart="@+id/challengerCS" />
+
+    <TextView
+        android:id="@+id/averageGoldEarned"
+        android:text="Average Gold Earned:"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/playerGoldEarned"
+        android:textColor="@color/white"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/playerWardsPlaced"
+        android:layout_alignStart="@+id/playerWardsPlaced" />
+
+    <TextView
+        android:id="@+id/challengerGoldEarned"
+        android:textColor="@color/white"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/playerGoldEarned"
+        android:layout_toRightOf="@+id/playerCS"
+        android:layout_toEndOf="@+id/playerCS"
+        />
+
+    <TextView
+        android:id="@+id/you"
+        android:text="You"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/analyticsTitleView"
+        android:layout_alignLeft="@+id/playerCS"
+        android:layout_alignStart="@+id/playerCS"
+        android:layout_marginTop="24dp" />
+
+    <TextView
+        android:id="@+id/challenger"
+        android:text="Challenger"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/you"
+        android:layout_alignRight="@+id/challengerCS"
+        android:layout_alignEnd="@+id/challengerCS" />
+
+
 </RelativeLayout>
